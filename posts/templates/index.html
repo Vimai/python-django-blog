@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+
+    {% include 'partials/menu.html' %}
+    <h1>Hello Word!</h1>
     <p> Testando block de html </p>
     <a href="{% url 'post' %}"> IR PARA O POST</a>
+
+    {% include 'partials/footer.html' %}
 {% endblock %}
