@@ -4,7 +4,14 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return render(request, 'index.html')
+    data = {
+        1: 'ola',
+        2: 'mundo'
+    }
+    dados = {
+        'data': data
+    }
+    return render(request, 'index.html', dados)
 
 
 def post(request):

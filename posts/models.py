@@ -7,5 +7,5 @@ class Post(models.Model):
     resume = models.CharField(max_length=255)
     content = models.TextField()
     author = models.ForeignKey(User, on_delete=models.PROTECT)
-    updated_date = models.DateTimeField(auto_now_add=True)
-    created_date = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True)
