@@ -1,13 +1,6 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>vimai - Blog</title>
-
-    <link rel="stylesheet" href="{% static 'index.css' %}">
-</head>
-<body>
-    <h1>Hello Word!</h1>
-</body>
-</html>
+{% block content %}
+    <p> Testando block de html </p>
+    <a href="{% url 'post' %}"> IR PARA O POST</a>
+{% endblock %}
