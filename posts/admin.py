@@ -1,7 +1,8 @@
 from django.contrib import admin
 
 # Register your models here.
-from posts.models import Post
+from posts.models import Post, PostCategory
+
 
 class ListPosts(admin.ModelAdmin):
     list_display = ('id', 'title', 'created_at')
@@ -12,5 +13,6 @@ class ListPosts(admin.ModelAdmin):
 
 
 admin.site.register(Post, ListPosts)
+admin.site.register(PostCategory)
 # django-ckeditor
 # Pillow
