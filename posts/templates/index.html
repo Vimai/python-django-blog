@@ -5,7 +5,14 @@
     {% include 'partials/menu.html' %}
     <h1>Hello Word!</h1>
     <p> Testando block de html </p>
-    <a href="{% url 'post' %}"> IR PARA O POST</a>
+
+    <p>Valores</p>
+    {% if posts %}
+    {% for post in posts %}
+    <p> - {{ post.title }} <a href="{% url 'post' post.id %}"> ir para post </a></p>
+    {% endfor %}
+    {% else %}
+    {% endif %}
 
     {% include 'partials/footer.html' %}
 {% endblock %}

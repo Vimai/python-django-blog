@@ -9,5 +9,8 @@
 
     <a href="{% url 'index' %}"> IR PARA HOME</a>
 
+    <p>{{post.title}}</p>
+    <p>{{post.created_at}}</p>
+
     {% include 'partials/footer.html' %}
 {% endblock %}
