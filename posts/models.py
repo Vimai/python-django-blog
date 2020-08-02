@@ -15,5 +15,6 @@ class Post(models.Model):
     category = models.ForeignKey(PostCategory, on_delete=models.CASCADE)
     content = models.TextField()
     author = models.ForeignKey(User, on_delete=models.PROTECT)
+    published = models.BooleanField(default=False)
     updated_at = models.DateTimeField(auto_now_add=True)
     created_at = models.DateTimeField(auto_now_add=True)

@@ -6,7 +6,7 @@ from .models import Post
 
 
 def index(request):
-    posts = Post.objects.all()
+    posts = Post.objects.filter(published=True)
     data = {
         'posts': posts
     }
