@@ -6,7 +6,7 @@ from .models import Post
 
 
 def index(request):
-    posts = Post.objects.filter(published=True)
+    posts = Post.objects.order_by('-created_at').filter(published=True)
     data = {
         'posts': posts
     }

@@ -5,8 +5,9 @@ from posts.models import Post, PostCategory
 
 
 class ListPosts(admin.ModelAdmin):
-    list_display = ('id', 'title', 'created_at')
+    list_display = ('id', 'title', 'created_at', 'published')
     list_display_links = ('id', 'title')
+    list_editable = ('published', )
     search_fields = ('title', )
     list_filter = ('category', )
     list_per_page = 25
