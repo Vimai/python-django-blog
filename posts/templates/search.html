@@ -1,12 +1,19 @@
-{% include 'partials/_menu.html' %}
-<h1>Search!</h1>
-{% include 'partials/_search_menu.html' %}
-<p>Posts</p>
-{% if posts %}
-{% for post in posts %}
-<p> - {{ post.title }} <a href="{% url 'post' post.id %}"> ir para post </a></p>
-{% endfor %}
-{% else %}
-<p>Post não encontrado</p>
-{% endif %}
-{% include 'partials/_footer.html' %}
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    {% include 'partials/_menu.html' %}
+    <h1>Search!</h1>
+    <br>
+    {% include 'partials/_search_menu.html' %}
+    <h2>Posts</h2>
+    <br>
+    {% if posts %}
+    {% for post in posts %}
+    <p> - {{ post.title }} <a href="{% url 'post' post.id %}"> ir para post </a></p>
+    {% endfor %}
+    {% else %}
+    <p>Post não encontrado</p>
+    {% endif %}
+    <br>
+    {% include 'partials/_footer.html' %}
+{% endblock %}

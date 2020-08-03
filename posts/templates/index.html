@@ -3,15 +3,17 @@
 {% block content %}
     {% include 'partials/_menu.html' %}
     <h1>Hello Word!</h1>
+    <br>
     <p> Testando block de html </p>
     {% include 'partials/_search_menu.html' %}
-    <p>Posts</p>
+    <h2>Posts</h2>
+    <br>
     {% if posts %}
     {% for post in posts %}
     <p> - {{ post.title }} <a href="{% url 'post' post.id %}"> ir para post </a></p>
     {% endfor %}
     {% else %}
     {% endif %}
-
+    <br>
     {% include 'partials/_footer.html' %}
 {% endblock %}

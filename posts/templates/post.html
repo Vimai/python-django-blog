@@ -4,14 +4,19 @@
 
 
     {% include 'partials/_menu.html' %}
-    <h2> titulo do blog </h2>
-    <p> testo do post </p>
+    <h1>Histórias:</h1>
+    <br>
+    {% include 'partials/_search_menu.html' %}
 
-    <a href="{% url 'index' %}"> IR PARA HOME</a>
+    <h2> {{post.title}} </h2>
+    <p>Categoria: {{post.category}} - <small>{{post.created_at}}</small></p>
+    <br>
+    <br>
+    <p> {{post.resume}} </p>
 
-    <p>{{post.title}}</p>
-    <p>{{post.category}}</p>
-    <p>{{post.created_at}}</p>
+    <p>{{post.content}}</p>
+    <br>
+
 
     {% include 'partials/_footer.html' %}
 {% endblock %}
