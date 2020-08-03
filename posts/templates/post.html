@@ -3,7 +3,7 @@
 {% block content %}
 
 
-    {% include 'partials/menu.html' %}
+    {% include 'partials/_menu.html' %}
     <h2> titulo do blog </h2>
     <p> testo do post </p>
 
@@ -13,5 +13,5 @@
     <p>{{post.category}}</p>
     <p>{{post.created_at}}</p>
 
-    {% include 'partials/footer.html' %}
+    {% include 'partials/_footer.html' %}
 {% endblock %}
