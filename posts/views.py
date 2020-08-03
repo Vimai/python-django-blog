@@ -19,3 +19,16 @@ def post(request, post_id):
         'post': post_object
     }
     return render(request, 'post.html', data)
+
+
+def search(request):
+    posts = Post.objects.order_by('-created_at').filter(published=True)
+    if 'search' in request.GET:
+        possible_titles = request.GET['search']
+        if possible_titles:
+            posts = posts.filter(title__icontains=possible_titles)
+
+    data = {
+        'posts': posts
+    }
+    return render(request, 'search.html', data)

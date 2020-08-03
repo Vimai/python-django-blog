@@ -1,0 +1,10 @@
+<h1>search</h1>
+
+<p>Valores</p>
+{% if posts %}
+{% for post in posts %}
+<p> - {{ post.title }} <a href="{% url 'post' post.id %}"> ir para post </a></p>
+{% endfor %}
+{% else %}
+<p>Post não encontrado</p>
+{% endif %}

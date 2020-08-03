@@ -5,7 +5,12 @@
     {% include 'partials/menu.html' %}
     <h1>Hello Word!</h1>
     <p> Testando block de html </p>
-
+    <div>
+        <form action="{% url 'search_post' %}">
+            <input type="text" name="search">
+            <button type="submit"> BUSCAR</button>
+        </form>
+    </div>
     <p>Valores</p>
     {% if posts %}
     {% for post in posts %}

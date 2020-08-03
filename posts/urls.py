@@ -5,4 +5,5 @@ from . import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('content/<int:post_id>', views.post, name='post'),
+    path('search/', views.search, name='search_post'),
 ]
