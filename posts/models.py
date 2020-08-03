@@ -18,3 +18,6 @@ class Post(models.Model):
     published = models.BooleanField(default=False)
     updated_at = models.DateTimeField(auto_now_add=True)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title

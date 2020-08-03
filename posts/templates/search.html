@@ -1,6 +1,7 @@
-<h1>search</h1>
-
-<p>Valores</p>
+{% include 'partials/menu.html' %}
+<h1>Search!</h1>
+{% include 'partials/search_menu.html' %}
+<p>Posts</p>
 {% if posts %}
 {% for post in posts %}
 <p> - {{ post.title }} <a href="{% url 'post' post.id %}"> ir para post </a></p>
@@ -8,3 +9,4 @@
 {% else %}
 <p>Post não encontrado</p>
 {% endif %}
+{% include 'partials/footer.html' %}
