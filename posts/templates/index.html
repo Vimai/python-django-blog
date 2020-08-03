@@ -1,17 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-
     {% include 'partials/menu.html' %}
     <h1>Hello Word!</h1>
     <p> Testando block de html </p>
-    <div>
-        <form action="{% url 'search_post' %}">
-            <input type="text" name="search">
-            <button type="submit"> BUSCAR</button>
-        </form>
-    </div>
-    <p>Valores</p>
+    {% include 'partials/search_menu.html' %}
+    <p>Posts</p>
     {% if posts %}
     {% for post in posts %}
     <p> - {{ post.title }} <a href="{% url 'post' post.id %}"> ir para post </a></p>
