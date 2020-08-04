@@ -12,9 +12,9 @@ def signup(request):
         email = request.POST['email']
         password = request.POST['password']
         print(email, password)
-        if not email.strip():
+        if empty_field(email):
             return redirect('signup')
-        if not password.strip():
+        if empty_field(password):
             return redirect('signup')
 
         if User.objects.filter(email=email).exists():
@@ -34,9 +34,9 @@ def login(request):
     if request.method == 'POST':
         email = request.POST['email']
         password = request.POST['password']
-        if not email.strip():
+        if empty_field(email):
             return redirect('login')
-        if not password.strip():
+        if empty_field(password):
             return redirect('login')
 
         if User.objects.filter(email=email).exists():
@@ -65,3 +65,7 @@ def dashboard(request):
         return render(request, 'users/dashboard.html', data)
     else:
         return render(request, 'index.html')
+
+
+def empty_field(value):
+    return not value.strip()
