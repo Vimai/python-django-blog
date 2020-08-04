@@ -57,5 +57,11 @@ def logout(request):
 
 
 def dashboard(request):
-    print('ddashboard')
-    return render(request, 'users/dashboard.html')
+    if request.user.is_authenticated:
+        posts = Post.objects.order_by('-created_at').filter(published=True)
+        data = {
+            'posts': posts
+        }
+        return render(request, 'users/dashboard.html', data)
+    else:
+        return render(request, 'index.html')
