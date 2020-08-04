@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    {% include 'partials/_menu.html' %}
+    <h1>Sign Up</h1>
+
+    <div>
+    <form action="{% url 'signup' %}" method="POST">
+        {% csrf_token %}
+        <label for="email">E-mail:</label>
+        <input type="text" name="email" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="text" name="password" required>
+        <br>
+        <button type="submit"> LOGIN </button>
+    </form>
+    </div>
+    <br>
+
+
+
+
+    {% include 'partials/_footer.html' %}
+{% endblock %}
