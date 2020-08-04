@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib import auth
 
 # from .models import Users
+from posts.models import Post
 
 
 def signup(request):
@@ -50,9 +51,9 @@ def login(request):
     return render(request, 'users/login.html')
 
 
-def logout(request, post_id):
-
-    return render(request, 'post.html')
+def logout(request):
+    auth.logout(request)
+    return redirect('index')
 
 
 def dashboard(request):
