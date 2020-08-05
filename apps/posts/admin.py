@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from posts.models import Post, PostCategory
+from apps.posts.models import Post, PostCategory
 
 
 class ListPosts(admin.ModelAdmin):
