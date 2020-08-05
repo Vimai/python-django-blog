@@ -1,14 +1,18 @@
 from django.shortcuts import render, get_object_or_404
 
 from django.http import HttpResponse
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from .models import Post
 
 
 def index(request):
     posts = Post.objects.order_by('-created_at').filter(published=True)
+    paginator = Paginator(posts, 2)
+    page = request.GET.get('page')
+    posts_per_page = paginator.get_page(page)
     data = {
-        'posts': posts
+        'posts': posts_per_page
     }
     return render(request, 'index.html', data)
 
