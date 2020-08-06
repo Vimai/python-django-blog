@@ -6,12 +6,11 @@
 
     <br>
     {% include 'partials/_search_menu.html' %}
+    <p>Reviews your message</p>
     <section class="container mt-2">
-        <form action="{% url 'review-contact' %}" method="post">
-            {% csrf_token %}
-            {{form}}
-            <input type="submit" value="Send Message" class="btc btn-success">
-        </form>
+        <p>Name: {{form.name.value}}</p>
+        <p>Email: {{form.email.value}}</p>
+        <p>Message: {{form.message.value}}</p>
     </section>
     {% include 'partials/_footer.html' %}
 {% endblock %}
