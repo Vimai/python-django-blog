@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib import auth
 
 # from .models import Users
-from apps.posts.models import Post
+from posts.models import Post
 
 
 def signup(request):
