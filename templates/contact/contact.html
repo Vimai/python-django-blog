@@ -9,7 +9,12 @@
     <section class="container mt-2">
         <form action="{% url 'review-contact' %}" method="post">
             {% csrf_token %}
-            {{form}}
+            {% for field in form.visible_fields %}
+            <div class="form-group">
+                <label for="{{field.id_for_label}}">{{field.label}}</label>
+                {{field}}
+            </div>
+            {% endfor %}
             <input type="submit" value="Send Message" class="btc btn-success">
         </form>
     </section>
