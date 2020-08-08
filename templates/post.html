@@ -12,9 +12,9 @@
     <p>Categoria: {{post.category}} - <small>{{post.created_at}}</small></p>
     <br>
     <br>
-    <p> {{post.resume}} </p>
+    <p> {{post.summary|safe}} </p>
 
-    <p>{{post.content}}</p>
+    <p>{{post.content|safe}}</p>
     <br>
 
 

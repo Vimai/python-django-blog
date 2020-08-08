@@ -35,6 +35,8 @@ INSTALLED_APPS = [
     'contact.apps.ContactConfig',
     'posts.apps.PostsConfig',
     'users.apps.UsersConfig',
+    'ckeditor',
+    'ckeditor_uploader',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -137,3 +139,6 @@ MEDIA_URL = '/media/'
 # Configuring APPs folder
 PROJECT_ROOT = os.path.dirname(__file__)
 sys.path.insert(0, os.path.join(PROJECT_ROOT, '../apps'))
+
+# CKEDITOR
+CKEDITOR_UPLOAD_PATH = 'uploads/ckeditor'
