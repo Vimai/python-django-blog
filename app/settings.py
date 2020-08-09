@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'contact.apps.ContactConfig',
+    'home.apps.HomeConfig',
     'posts.apps.PostsConfig',
     'users.apps.UsersConfig',
     'ckeditor',
