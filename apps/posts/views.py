@@ -9,10 +9,18 @@ from .models import Post
 def index(request):
     posts = Post.objects.order_by('-created_at').filter(published=True)
     paginator = Paginator(posts, 2)
-    page = request.GET.get('page')
-    posts_per_page = paginator.get_page(page)
+    page_request_var = 'page'
+    page = request.GET.get(page_request_var)
+    try:
+        paginated_queryset = paginator.page(page)
+    except PageNotAnInteger:
+        paginated_queryset = paginator.page(1)
+    except EmptyPage:
+        paginated_queryset = paginator.page(paginator.num_pages)
+
     data = {
-        'posts': posts_per_page
+        'posts': paginated_queryset,
+        'page_request_var': page_request_var
     }
     return render(request, 'index.html', data)
 
