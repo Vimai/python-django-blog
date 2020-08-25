@@ -1,28 +1,28 @@
 {% load static %}
 
 <ul class="nav justify-content-center">
-  <li class="nav-item">
-    <a class="nav-link active" href="{% url 'index' %}"> Blog </a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="{% url 'home' %}"> Who am i </a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-  </li>
+    <li class="nav-item">
+        <a class="nav-link active" href="{% url 'index' %}"> Blog </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'home' %}"> Who am i </a>
+    </li>
+    <li class="nav-item">
+        <a aria-disabled="true" class="nav-link disabled" href="#" tabindex="-1">Disabled</a>
+    </li>
 </ul>
 
 <div style="background-color: lightblue;">
     <span>Vimai - blog - <a href="{% url 'index' %}"> Home </a></span>
     <span> - <a href="{% url 'contact' %}"> Contact </a></span>
     {% if user.is_authenticated %}
-        <span> - <a href="{% url 'dashboard' %}"> Dashboard </a></span>
-        <span> - <a href="{% url 'logout' %}"> Logout </a></span>
+    <span> - <a href="{% url 'dashboard' %}"> Dashboard </a></span>
+    <span> - <a href="{% url 'logout' %}"> Logout </a></span>
     {% else %}
-        <span> - <a href="{% url 'signup' %}"> Sign Up </a></span>
-        <span> - <a href="{% url 'login' %}"> Login </a></span>
+    <span> - <a href="{% url 'signup' %}"> Sign Up </a></span>
+    <span> - <a href="{% url 'login' %}"> Login </a></span>
     {% endif %}
 </div>
