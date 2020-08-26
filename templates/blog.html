@@ -16,7 +16,7 @@
                                                                              src="img/blog-post-1.jpeg"></a></div>
                         <div class="post-details">
                             <div class="post-meta d-flex justify-content-between">
-                                <div class="date meta-last">20 May | 2016</div>
+                                <div class="date meta-last">{{ post.created_at | date:'d M | Y' }}</div>
                                 <div class="category"><a href="#">{{ post.category }}</a></div>
                             </div>
                             <a href="post.html">
@@ -27,7 +27,7 @@
                                 <div class="avatar"><img alt="..." class="img-fluid" src="img/avatar-3.jpg"></div>
                                 <div class="title"><span>{{ post.author }}</span></div>
                             </a>
-                                <div class="date"><i class="icon-clock"></i> {{ post.created_at | date:'d M, Y' }}</div>
+                                <div class="date"><i class="icon-clock"></i> {{ post.updated_at | date:'d M, Y' }}</div>
 <!--                                <div class="comments meta-last"><i class="icon-comment"></i>12</div>-->
                             </footer>
                         </div>
