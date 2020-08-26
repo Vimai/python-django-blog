@@ -22,7 +22,7 @@ def index(request):
         'posts': paginated_queryset,
         'page_request_var': page_request_var
     }
-    return render(request, 'index.html', data)
+    return render(request, 'blog.html', data)
 
 
 def post(request, post_id):
