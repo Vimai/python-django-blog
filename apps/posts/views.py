@@ -30,6 +30,30 @@ def index(request):
     return render(request, 'blog.html', data)
 
 
+def old(request):
+    posts = Post.objects.order_by('-updated_at').filter(published=True)
+    paginator = Paginator(posts, 2)
+    page_request_var = 'page'
+    page = request.GET.get(page_request_var)
+    try:
+        paginated_queryset = paginator.page(page)
+    except PageNotAnInteger:
+        paginated_queryset = paginator.page(1)
+    except EmptyPage:
+        paginated_queryset = paginator.page(paginator.num_pages)
+
+    latest = Post.objects.order_by('-updated_at')[0:3]
+    categories = PostCategory.objects.all()
+
+    data = {
+        'posts': paginated_queryset,
+        'page_request_var': page_request_var,
+        'latest': latest,
+        'categories': categories
+    }
+    return render(request, 'old.html', data)
+
+
 def post(request, post_id):
     post_object = get_object_or_404(Post, pk=post_id)
     data = {
