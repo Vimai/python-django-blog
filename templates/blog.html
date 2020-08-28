@@ -12,14 +12,17 @@
                     {% if posts %}
                     {% for post in posts %}
                     <div class="post col-xl-6">
-                        <div class="post-thumbnail"><a href="post.html"><img alt="..." class="img-fluid"
-                                                                             src="img/blog-post-1.jpeg"></a></div>
+                        <div class="post-thumbnail">
+                            <a href="{% url 'post' post.id %}">
+                                <img alt="..." class="img-fluid" src="img/blog-post-1.jpeg">
+                            </a>
+                        </div>
                         <div class="post-details">
                             <div class="post-meta d-flex justify-content-between">
                                 <div class="date meta-last">{{ post.created_at | date:'d M | Y' }}</div>
                                 <div class="category"><a href="#">{{ post.category }}</a></div>
                             </div>
-                            <a href="post.html">
+                            <a href="{% url 'post' post.id %}">
                                 <h3 class="h4">{{ post.title }}</h3></a>
                             <p class="text-muted">{{ post.summary }}</p>
                             <footer class="post-footer d-flex align-items-center"><a
@@ -81,10 +84,9 @@
                     <h3 class="h6">Latest Posts</h3>
                 </header>
                 <div class="blog-posts">
-
                     {% if latest %}
                     {% for post in latest %}
-                    <a href="#">
+                    <a href="{% url 'post' post.id %}">
                         <div class="item d-flex align-items-center">
                             <div class="image"><img alt="..." class="img-fluid" src="img/small-thumbnail-1.jpg"></div>
                             <div class="title"><strong>{{ post.title }}</strong>
