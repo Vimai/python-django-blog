@@ -1,54 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<header class="header">
-    <!-- Main Navbar-->
-    <nav class="navbar navbar-expand-lg">
-        <div class="search-area">
-            <div class="search-area-inner d-flex align-items-center justify-content-center">
-                <div class="close-btn"><i class="icon-close"></i></div>
-                <div class="row d-flex justify-content-center">
-                    <div class="col-md-8">
-                        <form action="#">
-                            <div class="form-group">
-                                <input id="search" name="search" placeholder="What are you looking for?" type="search">
-                                <button class="submit" type="submit"><i class="icon-search-1"></i></button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <!-- Navbar Brand -->
-            <div class="navbar-header d-flex align-items-center justify-content-between">
-                <!-- Navbar Brand --><a class="navbar-brand" href="index.html">Bootstrap Blog</a>
-                <!-- Toggle Button-->
-                <button aria-controls="navbarcollapse" aria-expanded="false" aria-label="Toggle navigation"
-                        class="navbar-toggler" data-target="#navbarcollapse" data-toggle="collapse"
-                        type="button"><span></span><span></span><span></span></button>
-            </div>
-            <!-- Navbar Menu -->
-            <div class="collapse navbar-collapse" id="navbarcollapse">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link active " href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link " href="blog.html">Blog</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link " href="post.html">Post</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link " href="#">Contact</a>
-                    </li>
-                </ul>
-                <div class="navbar-text"><a class="search-btn" href="#"><i class="icon-search-1"></i></a></div>
-                <ul class="langs navbar-text"><a class="active" href="#">EN</a><span>           </span><a
-                        href="#">ES</a></ul>
-            </div>
-        </div>
-    </nav>
-</header>
-<!-- Hero Section-->
-<section class="hero" style="background: url(img/hero.jpg); background-size: cover; background-position: center center">
+{% include 'partials/_header.html' %}
+<section class="hero" style="background: url({% static 'img/hero.jpg' %}); background-size: cover; background-position: center center">
     <div class="container">
         <div class="row">
             <div class="col-lg-7">
@@ -160,7 +114,7 @@
 </section>
 <!-- Divider Section-->
 <section class="divider"
-         style="background: url(img/divider-bg.jpg); background-size: cover; background-position: center bottom">
+         style="background: url({% static 'img/divider-bg.jpg' %}); background-size: cover; background-position: center bottom">
     <div class="container">
         <div class="row">
             <div class="col-md-7">
