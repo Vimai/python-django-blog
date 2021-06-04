@@ -1,6 +1,6 @@
 asgiref @ file:///tmp/build/80754af9/asgiref_1594338739818/work
 certifi==2020.6.20
-Django==3.0.3
+Django==3.1.9
 django-ckeditor==5.9.0
 django-js-asset==1.2.2
 gunicorn==20.0.4
